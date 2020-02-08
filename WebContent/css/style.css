@@ -1,0 +1,651 @@
+
+
+body {
+    padding: 0;
+    margin: 0;
+    background: #FFF;
+    font-family: 'Zapf Chancery', cursive;
+}
+
+body a:hover {
+    text-decoration: none;
+}
+
+body a:focus,
+a:hover {
+    text-decoration: none;
+}
+
+body a:hover,
+body button:hover {
+    opacity: .8;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+    font-family: 'Zapf Chancery', cursive;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+    font-size: 17px;
+    line-height: 25px;
+    color: #999;
+    font-family: 'Zapf Chancery', cursive;
+    font-weight: normal;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+}
+
+label {
+    margin: 0;
+}
+
+a:focus,
+a:hover {
+    text-decoration: none;
+    outline: none
+}
+
+.text-wh {
+    color: #fff;
+}
+
+.text-da {
+    color: #343a40;
+}
+
+.text-li {
+    color: #f8f9fa;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* //Reset Code */
+
+/* bottom-to-top */
+a.move-top {
+    position: fixed;
+    bottom: 1.5%;
+    right: 2%;
+    z-index: 0;
+}
+
+a.move-top span {
+    color: #ff3f34;
+    font-size: 30px;
+}
+
+/* //bottom-to-top */
+
+/* header */
+/* top bar */
+.header-top {
+    padding: 0 .5em;
+}
+
+/* social icons */
+.top-right-info li a {
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 2px;
+    display: inline-block;
+    transition: 0.3s all;
+    -webkit-transition: 0.3s all;
+    -moz-transition: 0.3s all;
+    -o-transition: 0.3s all;
+    -ms-transition: 0.3s all;
+}
+
+.top-right-info li a span {
+    color: #fff;
+    font-size: 14px;
+}
+
+.top-right-info li p {
+    margin-right: 6px;
+    font-size: 16px;
+}
+
+
+.top-right-info li {
+    display: inline-block;
+}
+
+nav li:last-child {
+    margin: 0;
+}
+
+/* //social icons */
+.header-top p,
+.header-w3layouts p,
+.top-w3layouts p {
+    font-size: 14px;
+}
+
+a.login-button-2 {
+    letter-spacing: 1px;
+    font-size: 12px;
+    background: #05c46b;
+    padding: 8px 20px;
+    border-radius: 4px;
+    color: #000000;
+}
+
+.middle-flex {
+    align-items: center;
+}
+
+/* //top bar */
+/* header 2 */
+.nav-content {
+    display: flex;
+    align-items: center;
+}
+
+.nav_web-dealingsls {
+    margin-left: auto;
+}
+
+/* navigation */
+/* CSS Document */
+.toggle-2,
+.toggle,
+[id^=drop] {
+    display: none;
+}
+
+/* Giving a background-color to the nav container. */
+nav {
+    margin: 0;
+    padding: 0;
+}
+
+/* Since we'll have the "ul li" "float:left"
+ * we need to add a clear after the container. */
+nav:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Removing padding, margin and "list-style" from the "ul",
+ * and adding "position:reltive" */
+nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+}
+
+/* Positioning the navigation items inline */
+nav ul li {
+    display: inline-block;
+    float: left;
+}
+
+/* Styling the links */
+nav li {
+    margin: 0 10px;
+}
+
+nav a {
+    color: #3a3939;
+    font-weight: 400;
+    font-size: 14px;
+    display: inline-block;
+    letter-spacing: .5px;
+}
+
+/* Background color change on Hover */
+nav a:hover {
+    color: #3a3939;
+}
+
+/* Hide Dropdowns by Default
+ * and giving it a position of absolute */
+nav ul ul {
+    display: none;
+    position: absolute;
+    top: 24px;
+    background: #fff;
+    padding: 10px;
+    z-index: 9;
+    border: 1px solid #e4e4e4;
+    /* has to be the same number as the "line-height" of "nav a" */
+}
+
+/* Display Dropdowns on Hover */
+nav ul li:hover>ul {
+    display: inherit;
+}
+
+/* First Tier Dropdown */
+nav ul ul li {
+    width: 170px;
+    float: none;
+    display: list-item;
+    position: relative;
+    margin: 0;
+}
+
+nav ul ul li a {
+    display: block;
+    font-size: 13px;
+    padding: 6px 10px;
+}
+
+a.drop-text:hover {
+    background: #f5f5f5;
+}
+
+nav ul ul ul li {
+    position: relative;
+    top: -60px;
+    /* has to be the same number as the "width" of "nav ul ul li" */
+    left: 170px;
+}
+
+/* Change ' +' in order to change the Dropdown symbol */
+li>a:only-child:after {
+    content: '';
+}
+
+/* Media Queries
+--------------------------------------------- */
+@media all and (max-width : 991px) {
+    #logo {
+        float: left;
+    }
+
+    /* Hide the navigation menu by default */
+    /* Also hide the  */
+    .toggle+a,
+    .menu {
+        display: none;
+    }
+
+
+    /* Styling the toggle label */
+    .toggle {
+        display: block;
+        padding: 8px 15px 10px;
+        font-size: 15px;
+        text-decoration: none;
+        border: none;
+        float: right;
+        background-color: #eee;
+        color: #111;
+        border-radius: 4px;
+        -webkit-border-radius: 4px;
+        -o-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -moz-border-radius: 4px;
+        margin-bottom: 0;
+        cursor: pointer;
+        margin-top: 8px;
+    }
+
+    .menu .toggle {
+        float: none;
+        text-align: center;
+        margin: auto;
+        max-width: 70px;
+        padding: 5px 0;
+        font-weight: normal;
+        font-size: 14px;
+        background: transparent;
+        color: #3a3939;
+        letter-spacing: .5px;
+    }
+
+    .toggle:hover {
+        opacity: .8;
+    }
+
+    /* Display Dropdown when clicked on Parent Label */
+    [id^=drop]:checked+ul {
+        display: block;
+        padding: 15px 0;
+        text-align: center;
+        width: 100%;
+        background: #f9f9f9;
+        border: 1px solid #e2e2e2;
+    }
+
+    nav ul {
+        float: right;
+    }
+
+    /* Change menu item's width to 100% */
+    nav ul li {
+        display: block;
+        width: 100%;
+    }
+
+    nav a:hover,
+    nav ul ul ul a {
+        background-color: transparent;
+    }
+
+    /* Hide Dropdowns by Default */
+    nav ul ul {
+        float: none;
+        position: static;
+        color: #ffffff;
+        /* has to be the same number as the "line-height" of "nav a" */
+    }
+
+    /* Hide menus on hover */
+    nav ul ul li:hover>ul,
+    nav ul li:hover>ul {
+        display: none;
+    }
+
+    /* Fisrt Tier Dropdown */
+    nav ul ul li {
+        display: block;
+        width: 100%;
+        padding: 0;
+    }
+
+    nav ul ul ul li {
+        position: static;
+        /* has to be the same number as the "width" of "nav ul ul li" */
+    }
+
+    nav .menu li {
+        margin: 2px 0;
+    }
+
+    ul.menu {
+        max-height: 250px;
+        overflow-y: auto;
+    }
+
+    .nav-content {
+        display: block;
+    }
+}
+
+/* navigation scroll */
+ul.menu::-webkit-scrollbar {
+    width: 3px;
+}
+
+ul.menu::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+ul.menu::-webkit-scrollbar-thumb {
+    background-color: rgb(212, 212, 212);
+}
+
+/* //navigation scroll */
+
+/* //navigation */
+/* logo */
+a.logo {
+    color: #3a3939;
+    font-size: 40px;
+    padding: 0;
+    font-weight: bold;
+    position: relative;
+}
+
+a.logo span {
+    color: #ff3f34;
+    font-size: 15px;
+    letter-spacing: 5px;
+    font-weight: 500;
+    position: absolute;
+    right: 0;
+    top: -2px;
+}
+
+/* //logo */
+
+
+
+/* //right side slider */
+
+/* css clider */
+
+.cover-top-center-9 {
+    min-height: 100vh;
+    display: grid;
+    align-items: center;
+    position: relative;
+    z-index: 99;
+}
+
+/* //banner */
+
+/* about */
+.about {
+    background: url(../images/image4.jpg) no-repeat left;
+    background-size: cover;
+    -webkit-background-size: contain;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    min-height: 500px;
+}
+
+h3.w3ls-title {
+    font-size: 40px;
+    font-weight: 600;
+    color: #333;
+}
+
+h3.w3ls-title span {
+    color: #ff3f34;
+}
+
+p.w3ls-title-sub {
+    font-size: 22px;
+    color: #353535;
+    letter-spacing: 3px;
+}
+
+.right-space {
+    padding-right: 15em;
+}
+
+.w3ls-bnrbtm {
+    position: relative;
+    z-index: 1;
+    background: #fff;
+}
+.w3ls-bnrbtm,
+.single-page,
+.portfolio,
+.ab-info-main,.about-bottom {
+    position: relative;
+    z-index: 1;
+    background: #fff;
+}
+/* //about */
+
+/* services */
+.middle {
+    background: url(../images/bg5.jpg) no-repeat center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    position: relative;
+    z-index: 0;
+    margin-bottom: 7em;
+}
+
+.carousel-item {
+  height: 100vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.foot{
+	 margin-top: 50px;
+	 text-align: center;
+}
+.social-icon{
+	margin: auto;
+	width: 60px;
+	height: 60px;
+	padding-top: 15px;
+	text-align: center; 
+	border-radius:50%;
+	font-size: 30px !important;
+	border: 1px solid white;
+}
+.foot p{
+	margin-top: 25px;
+}
+
+.footer{
+	background-color: #28292e;
+	color: white;
+	height: 590px;
+}
+.footer-menu{
+	margin-top: 75px;
+	text-align: center;
+}
+.footer-menu ul li{
+	list-style: none;
+	display: inline-block;
+	padding-right: 90px;
+	text-transform: uppercase;
+}
+.footer-icon{
+	margin-top: 90px;
+	text-align: center;
+}
+.footer-icon ul li{
+	list-style: none;
+	display: inline-block;
+	font-size: 30px;
+	color: white;
+	margin-right: 60px;
+}
+.back-icon{
+	margin:auto !important;
+	background-color: #212020;
+	border-radius: 50%;
+	margin-top: 50px;
+	font-size: 40px !important;
+	padding: 0px 50px 80px 50px;
+	position: absolute;
+	top: 60px;
+	left: 0PX;
+}
+.back{
+	width: 150px;
+	height: 158px;
+	overflow: hidden;
+	position: relative;
+	margin: auto !important;
+}
+@media (max-width: 597px)
+{
+	.navbar-toggler{
+		margin-top: 10px !important;
+		display: block !important;
+		float: right;
+		margin-top: 10px;
+	}
+	.banner-txt{
+		padding: 0px !important;
+	}
+	.about-txt{
+		padding: 0px !important;
+	}
+	.welcome{
+		margin-top: 20px !important;
+		padding-left: 15px !important;
+	}
+	.course{
+		height: 1100px;
+	}
+	.ratio{
+		height: 500px;
+	}
+	.banner-txt1{
+		margin-top: 300px !important; 
+	}
+	.log{
+		margin-bottom: 20px;
+	}
+	.keep{
+		height:1400px;
+	}
+	.connection ul li{
+		margin-right: 0px !important; 
+	}
+	.menu ul li{
+		margin-left: 40px !important;
+	}
+	.footer{
+		height: 730px;
+	}
+	.footer-menu{
+		margin-top: 0px !important;
+		text-align: center;
+	}
+	.menu{
+		background-color: rgba(0,0,0,0.5);
+	}
+	.menu{
+		margin-top: 40px;
+	}
+	.det .col-sm-6, .det .col-xs-6 {
+		margin-bottom: 30px !important;
+	}
+	.det .col-sm-6, .det .col-xs-6 {
+		margin-bottom: 30px !important;
+	}
+	.menu ul li:first-child{
+		margin-top: 0px !important;
+	}
+	.det .col-sm-6:nth-child(2), .det .col-xs-6:nth-child(2)
+	{
+		padding-bottom: 40px !important;
+	}
+	.bannerSize{
+		height: 800px !important;
+	}
+	.footer-menu ul li{
+		font-size: 11px !important;
+		padding-right: 25px !important;
+	}
+	.footer-menu ul li:last-child{
+		font-size: 11px !important;
+		padding-right: 0px !important;
+	}
+	.footer-icon ul li:first-child{
+		margin-left: 60px !important;
+	}
+}
