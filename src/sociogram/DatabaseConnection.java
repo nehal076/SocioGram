@@ -6,7 +6,7 @@ import java.util.Base64;
 
 public class DatabaseConnection 
 {
-	private final String DB = "sociogram";
+    private final String DB = "sociogram";
     private final String USRNAME = "root";
     private final String PASSWORD = "nehal";
 
