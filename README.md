@@ -1,3 +1,5 @@
+# SocioGram
+
 SocioGram is a platform for finding and building local communities.
 It's mission is to help people grow and achieve their goals through real-life, human connections. From professional networking to craft brewery crawls to coding workshops, people use SocioGram to meet new people, get out of their comfort zones, learn new things, pursue passions, and find supportive communities that will help them thrive.
 
@@ -11,4 +13,4 @@ Database : MySQL <br>
 
 Here's a demo video of the project :
 
-[![SocioGram Youtube Video](https://img.youtube.com/vi/oXREhsP0ulc/0.jpg)](https://www.youtube.com/watch?v=oXREhsP0ulc)
+[![SocioGram](https://yt-embed.herokuapp.com/embed?v=oXREhsP0ulc)](https://www.youtube.com/watch?v=oXREhsP0ulc "SocioGram")
