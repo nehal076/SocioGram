@@ -73,7 +73,7 @@ div.desc {
 											ResultSet res = ps.executeQuery();
 											while (res.next()) {
 												
-												PreparedStatement psg = cn.prepareStatement("select * from groups where groupid=?");
+												PreparedStatement psg = cn.prepareStatement("select * from sociogram.groups where groupid=?");
 												psg.setString(1, res.getString(1));
 
 												ResultSet rsg = psg.executeQuery();

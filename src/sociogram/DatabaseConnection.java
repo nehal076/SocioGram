@@ -6,6 +6,18 @@ import java.util.Base64;
 
 public class DatabaseConnection 
 {
+	
+	/*
+	
+	 * localhost config -
+	 * username = root
+	 * password = nehal
+	 * 
+	 * server config
+	 * username = root
+	 * password = passowrd 
+	 * */
+	 
 	private final String DB = "sociogram";
     private final String USRNAME = "root";
     private final String PASSWORD = "nehal";
@@ -21,7 +33,7 @@ public class DatabaseConnection
         try 
         {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost/" + DB, USRNAME, PASSWORD);
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + DB, USRNAME, PASSWORD);
         } 
         catch (ClassNotFoundException e) 
         {

@@ -3,6 +3,7 @@
 <html>
 <head>
 <title>SocioGram</title>
+<link href="./assets/img/brand/favicon.ico" rel="icon" type="image/png">
 </head>
 <body id="page-top">
 

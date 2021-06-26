@@ -20,7 +20,7 @@ public class db_query {
          Connection con=dbConnection.connect();
          
          System.out.println("connected");
-        PreparedStatement ps = con.prepareStatement("SELECT * FROM admin WHERE username= ? and password= ?");
+        PreparedStatement ps = con.prepareStatement("SELECT * FROM sociogram.admin WHERE username= ? and password= ?");
         ps.setString(1, email);
         ps.setString(2, password);
 
@@ -312,7 +312,7 @@ public class db_query {
        {
             Connection con=dbConnection.connect();
             
-           PreparedStatement ps = con.prepareStatement("SELECT groups.groupid,groups.groupname,groups.creatorid,groups.location,groups.permission,user.fname from groups INNER JOIN user ON user.userid=groups.creatorid");
+           PreparedStatement ps = con.prepareStatement("SELECT groups.groupid,groups.groupname,groups.creatorid,groups.location,groups.permission,user.fname from sociogram.groups INNER JOIN user ON user.userid=groups.creatorid ORDER BY groupid DESC");
             ResultSet rs = ps.executeQuery();
              ArrayList<showGroups> groups = new ArrayList<>();
             
@@ -330,7 +330,7 @@ public class db_query {
         int n;
         
          Connection con=dbConnection.connect();
-        PreparedStatement ps = con.prepareStatement("UPDATE groups SET Permission=? WHERE groupid=?");
+        PreparedStatement ps = con.prepareStatement("UPDATE sociogram.groups SET Permission=? WHERE groupid=?");
        if(i==1)
            ps.setString(1, "Allowed");
        else

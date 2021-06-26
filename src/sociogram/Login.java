@@ -48,7 +48,7 @@ public class Login extends HttpServlet {
 		//if(captchAns.equals(uans_captcha)) 
 		//{
 			String email=request.getParameter("email");
-			String password=request.getParameter("password");
+			String password=request.getParameter("passwordLogin");
 			
 			try
 		    {	

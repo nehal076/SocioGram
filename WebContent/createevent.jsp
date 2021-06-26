@@ -5,6 +5,7 @@
 <html>
 <head>
 <title>SocioGram | Host Event</title>
+<link href="./assets/img/brand/favicon.ico" rel="icon" type="image/png">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 <script type="text/javascript">
@@ -306,7 +307,7 @@
 														id="eventGroup" name="eventGroup" onchange="sendEventInfo()">
 														<%
 															
-															PreparedStatement pst = cn.prepareStatement("select * from groups");
+															PreparedStatement pst = cn.prepareStatement("select * from sociogram.groups");
 															ResultSet res = pst.executeQuery();
 															String groupint="";
 															while (res.next()) {

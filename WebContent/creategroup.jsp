@@ -145,22 +145,25 @@
 												</div>
 											</div>
 										</div>
-										<hr class="my-4" />
-										<!-- Submit Button -->
-										<div class="row">
-											<div class="col-md-6">
-												<div class="form-group">
-													<button class="btn btn-icon btn-3 bg-green" type="submit"
-														id="submit1">
-														<span class="btn-inner--icon text-white"><i
-															class="ni ni-cloud-upload-96"></i></span> <span
-															class="btn-inner--text text-white">Submit</span>
-													</button>
-												</div>
+									</div>
+								</div>
+										
+								<hr class="my-4" />
+								<!-- Submit Button -->
+								<div class="pl-lg-4">
+									<div class="row justify-content-center">
+										<div class="col-md-6">
+											<div class="form-group">
+												<button class="btn btn-icon btn-3 bg-green" type="submit"
+													id="submit1">
+													<span class="btn-inner--icon text-white"><i
+														class="ni ni-cloud-upload-96"></i></span> <span
+														class="btn-inner--text text-white">Submit</span>
+												</button>
 											</div>
 										</div>
 									</div>
-								</div>
+								</div>							
 							</form>
 						</div>
 					</div>

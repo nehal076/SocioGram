@@ -58,7 +58,7 @@ public class FetchData extends HttpServlet {
 	        DatabaseConnection db = new DatabaseConnection();
 	        Connection cn=db.setConnection();
 	        
-	       pc = cn.prepareStatement("select intid from groups where groupid=?");
+	       pc = cn.prepareStatement("select intid from sociogram.groups where groupid=?");
 				pc.setString(1, groupid);
 				System.out.println(pc);
 				ResultSet rc = pc.executeQuery();

@@ -45,7 +45,7 @@ public class EventActivity extends HttpServlet {
 		        Connection con = db.setConnection();
 		        PreparedStatement ps;
 		       
-		        ps= con.prepareStatement("insert into userevents values (?,?,?)");
+		        ps= con.prepareStatement("insert into sociogram.userevents values (?,?,?)");
 		        ps.setString(1, eventid);
 		        ps.setString(2, "Going");
 		        ps.setString(3, userid);

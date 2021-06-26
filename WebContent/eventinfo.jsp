@@ -42,7 +42,7 @@
 
 						<%
 							try {
-								PreparedStatement ps = con.prepareStatement("select * from events where eventid=?");
+								PreparedStatement ps = con.prepareStatement("select * from sociogram.events where eventid=?");
 								ps.setInt(1, Integer.parseInt(eventid));
 								ResultSet res = ps.executeQuery();
 								if (res.next()) {

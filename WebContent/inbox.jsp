@@ -5,7 +5,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>SocioGram | Inbox </title>
+<link href="./assets/img/brand/favicon.ico" rel="icon" type="image/png">
+<title> SocioGram | Inbox </title>
 </head>
 <body>
 
@@ -55,7 +56,7 @@
 	
 								</tr>
 							</thead>
-	<%
+							<%
 								try {
 									HttpSession ssn = request.getSession(false);
 									String userid = (String) ssn.getAttribute("userid");
@@ -64,7 +65,7 @@
 									DatabaseConnection db = new DatabaseConnection();
 									Connection cn = db.setConnection();
 	
-									PreparedStatement ps = cn.prepareStatement("select * from messaging where receiver=?");
+									PreparedStatement ps = cn.prepareStatement("select * from messaging where receiver=? ORDER BY dateTime DESC");
 									ps.setInt(1, Integer.parseInt(userid));
 									ResultSet res = ps.executeQuery();
 	
@@ -145,16 +146,17 @@
 </div>
 </div>
 </div>
+<jsp:include page="newfooter.jsp"></jsp:include>
 </div>
+
 </div>
-				
+	
 		<%
 		} catch (SQLException e) {
 			System.out.println("sql alert[home] - " + e.getMessage() + "\n");
 		}
 	%>
-
-					
+		
 </body>
-<jsp:include page="newfooter.jsp"></jsp:include>
+
 </html>

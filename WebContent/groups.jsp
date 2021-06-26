@@ -90,7 +90,7 @@ Connection cn = db.setConnection();
 		
 		
 		
-		psg=cn.prepareStatement("select * from groups where intid in (select distinct(intid) from userinterest where userid=?);");
+		psg=cn.prepareStatement("select * from sociogram.groups where intid in (select distinct(intid) from userinterest where userid=?);");
 		psg.setInt(1,Integer.parseInt(userid));
 		
 		rsg=psg.executeQuery();

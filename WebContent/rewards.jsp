@@ -10,17 +10,17 @@
 
 <%
 
-DatabaseConnection db = new DatabaseConnection();
-Connection con = db.setConnection();
+	DatabaseConnection db = new DatabaseConnection();
+	Connection con = db.setConnection();
+	
+	HttpSession ssn = request.getSession(false);
+	String userid = (String) ssn.getAttribute("userid");
 
-HttpSession ssn = request.getSession(false);
-String userid = (String) ssn.getAttribute("userid");
-
-try {
-	PreparedStatement ps = con.prepareStatement("select * from userinfo where userid=?");
-	ps.setInt(1, Integer.parseInt(userid));
-	ResultSet res = ps.executeQuery();
-	while (res.next()) {
+	try {
+		PreparedStatement ps = con.prepareStatement("select * from userinfo where userid=?");
+		ps.setInt(1, Integer.parseInt(userid));
+		ResultSet res = ps.executeQuery();
+		while (res.next()) {
 
 %>
 	<div class="main-content">

@@ -73,7 +73,7 @@ Connection cn = db.setConnection();
 					String location=rsl.getString(1);*/
 
 					pse = cn.prepareStatement(
-							"select * from events where groupid in (select groupid from usergroups where userid=?);");
+							"select * from sociogram.events where groupid in (select groupid from usergroups where userid=?);");
 					pse.setInt(1, Integer.parseInt(userid));
 
 					rse = pse.executeQuery();

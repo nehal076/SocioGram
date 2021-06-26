@@ -67,7 +67,7 @@ div.desc {
 								<div class="row">
 									<%
 										try {
-											PreparedStatement ps = cn.prepareStatement("select * from groups");
+											PreparedStatement ps = cn.prepareStatement("select * from sociogram.groups");
 
 											ResultSet res = ps.executeQuery();
 											while (res.next()) {

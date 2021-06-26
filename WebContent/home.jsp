@@ -5,6 +5,9 @@
 <html>
 <head>
 <title>SocioGram</title>
+
+<link href="./assets/img/brand/favicon.ico" rel="icon" type="image/png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 <%
@@ -20,8 +23,7 @@
 	<jsp:include page="sidenavbar.jsp"></jsp:include>
 	<div class="main-content">
 		<jsp:include page="newheader.jsp"></jsp:include>
-		<div class="header pb-8 pt-5 pt-md-8"
-			style="background-color: #4FD1EA">
+		<div class="header pb-8 pt-5 pt-md-8 bg-primary">
 			<div class="container-fluid">
 				<div class="header-body"></div>
 			</div>
@@ -220,6 +222,7 @@
 									}
 								%>
 							</a>
+							<input type="hidden" name="eventid" value=<%=res.getString("eventid")%> />
 							<div class="media-body">
 								<span class="mb-0 text-sm"> <a
 									href="eventinfo.jsp?eventid=<%=res.getString("eventid")%>">
@@ -242,7 +245,9 @@
 							<label class="form-control-label" for="EventDate">
 								<%=res.getString("eventdate")%>
 						</label>
-					</a></td>
+					</a>
+					</td>
+
 
 					<td>
 						<div class="avatar-group">
@@ -262,21 +267,20 @@
 													Blob blob = resuser1.getBlob("profilepic");
 							%>
 
-							<a href="#" class="avatar avatar-sm" data-toggle="tooltip"
+							<a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip"
 								data-original-title="Ryan Tompson"> <img
 								alt="Image placeholder"
 								src="data:image/gif;base64,<%=db.blobProcess(blob)%>"
-								class="rounded-circle">
+								>
 							</a>
 							<%
 								} else {
 							%>
-							<a href="#" class="avatar avatar-sm" data-toggle="tooltip"
-								data-original-title="Ryan Tompson"> <img
-								alt="Image placeholder" src="images/usericon.png"
-								class="rounded-circle">
+							<a href="#" class="avatar avatar-sm rounded-circle" data-toggle="tooltip"
+								data-original-title="Ryan Tompson"> 
+								<img alt="Image placeholder" src="images/usericon.png">
 							</a>
-
+							
 
 							<%
 								}}}
@@ -353,9 +357,9 @@
 							</a>
 							<div
 								class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-								<a class="dropdown-item" href="EventActivity">Join</a> <a
-									class="dropdown-item" href="EventActivity">Interested</a>
-								<a class="dropdown-item" href="#">Not Interested</a>
+								<a class="dropdown-item" href="EventActivity">Join</a> 
+								<a class="dropdown-item" href="EventActivity">Interested</a>
+								<a class="dropdown-item" href="EventActivity">Not Interested</a>
 							</div>
 						</div>
 					</td>

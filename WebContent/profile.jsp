@@ -367,7 +367,7 @@ function readURL(input) {
 
 								<%
 									PreparedStatement psg = con.prepareStatement(
-													"select * from groups where groupid in(select groupid from usergroups where userid=?)");
+													"select * from sociogram.groups where groupid in(select groupid from usergroups where userid=?)");
 											psg.setInt(1, Integer.parseInt(userid));
 											ResultSet rsg = psg.executeQuery();
 								%>

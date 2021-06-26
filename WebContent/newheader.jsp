@@ -15,8 +15,8 @@
 <head>
 
 <meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>SocioGram</title>
 <!-- Favicon -->
 <link href="./assets/img/brand/favicon.ico" rel="icon" type="image/png">
@@ -30,7 +30,7 @@
 	href="./assets/vendor/@fortawesome/fontawesome-free/css/all.min.css"
 	rel="stylesheet">
 <!-- Argon CSS -->
-<link type="text/css" href="./assets/css/argon.css?v=1.0.0"
+<link type="text/css" href="./assets/css/argon.css"
 	rel="stylesheet">
 <!--Material+Icons -->
 <link rel="stylesheet" type="text/css"
@@ -61,6 +61,7 @@
     display: block;
 }
 
+
 .notification1
 {
   position: absolute;
@@ -72,6 +73,20 @@
   color: white;
 }
 
+.num {
+ 	position:absolute;
+    right:-5px;
+    width:25px;
+    height:25px;
+    border-radius:50%;
+    background:#ff2c74;
+    color:#fff;
+    line-height:25px;
+    font-family:sans-serif;
+    text-align:center;
+    top: -24px !important;
+}
+
 .material-icons {
     margin-top: -3px;
     top: 0px;
@@ -80,12 +95,13 @@
 }
 </style>
 
-<nav class="navbar navbar-top navbar-expand-md navbar-dark"
-	id="navbar-main">
+
+<nav class="navbar navbar-top navbar-expand navbar-dark bg-primary border-bottom" id="navbar-main">
 	<div class="container-fluid">
-		<!-- Form -->
-		<div
-			class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<!-- Search Form -->
+		<form
+			class="navbar-search navbar-search-light form-inline mr-sm-3" id="navbar-search-main"">
 			<div class="form-group mb-0">
 				<div class="input-group input-group-alternative">
 					<div class="input-group-prepend">
@@ -95,17 +111,29 @@
 				
 				</div>
 			</div>
-		</div>
+		</form>
 
-		<!-- User -->
-		<ul class="navbar-nav align-items-center d-none d-md-flex ml-auto ml-md-0">
-		
-		
-		
+		<!-- Navbar links -->
+		<ul class="navbar-nav align-items-center  ml-md-auto">
+		<li class="nav-item d-xl-none">
+          <!-- Sidenav toggler -->
+          <div class="pr-3 sidenav-toggler sidenav-toggler-dark" data-action="sidenav-pin" data-target="#sidenav-main">
+            <div class="sidenav-toggler-inner">
+              <i class="sidenav-toggler-line"></i>
+              <i class="sidenav-toggler-line"></i>
+              <i class="sidenav-toggler-line"></i>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item d-sm-none">
+          <a class="nav-link" href="#" data-action="search-show" data-target="#navbar-search-main">
+            <i class="ni ni-zoom-split-in"></i>
+          </a>
+        </li>
         
         
         <%
-		pshead = con.prepareStatement("select count(*) from messaging where receiver=?");
+		pshead = con.prepareStatement("select count(*) from sociogram.messaging where receiver=?");
 		pshead.setInt(1, Integer.parseInt(useridhead));
 		rshead = pshead.executeQuery();
 		if(rshead.next())
@@ -115,19 +143,19 @@
         <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-envelope"></i>
-                <span class="notification"><%=rshead.getString(1)%></span>
+                <span class="badge badge-danger"><%=rshead.getString(1)%></span>
               </a>
               <div class="dropdown-menu dropdown-menu-xl dropdown-menu-right py-0 overflow-hidden">
                 <!-- Dropdown header -->
                 <div class="px-3 py-3">
                   <h6 class="text-sm text-muted m-0">You have <strong class="text-primary"><%=rshead.getString(1)%></strong> notifications.</h6>
                 </div>
-                <%pshead = con.prepareStatement("select * from messaging where receiver=? limit 5");
+                <%pshead = con.prepareStatement("select * from sociogram.messaging where receiver=? ORDER BY dateTime DESC limit 5");
 					pshead.setInt(1, Integer.parseInt(useridhead));
 					rshead = pshead.executeQuery();
 					while(rshead.next())
 					{
-						pshead = con.prepareStatement("select * from userinfo where userid=?");
+						pshead = con.prepareStatement("select * from sociogram.userinfo where userid=?");
     					pshead.setInt(1, Integer.parseInt(rshead.getString("sender")));
     					ResultSet rsheadsender = pshead.executeQuery(); 
     					if(rsheadsender.next())
@@ -171,13 +199,17 @@
                 <!-- View all -->
                 <a href="inbox.jsp" class="dropdown-item text-center text-primary font-weight-bold py-3">View all</a>
               </div>
-            </li>
+          </li>
             
-            <%} %>
+          <%} %>
+          </ul>
+          
+          
+          <!-- User Icon -->
 		
 		
-        
- 
+        	<ul class="navbar-nav align-items-center  ml-auto ml-md-0 ">
+ 			
  			<% 
 			  pshead = con.prepareStatement("select * from userinfo where userid=?");
 				pshead.setInt(1, Integer.parseInt(useridhead));
@@ -217,7 +249,7 @@
 						</div>
 				</a>
 			<%}}%> 
-				<div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
+				<div class="dropdown-menu dropdown-menu-right">
 					<div class=" dropdown-header noti-title">
 						<h6 class="text-overflow m-0">Welcome, <%=rshead.getString("fname")%>!</h6>
 					</div>
@@ -234,16 +266,25 @@
 					<a href="Logout" class="dropdown-item"> <i class="ni ni-user-run"></i>
 						<span>Logout</span>
 					</a>
-				</div></li>
-				
-		</ul>
+				</div>
+				</li>	
+			</ul>
+		</div>
 	</div>
 </nav>
+
 
 <!-- Core -->
 <script src="./assets/vendor/jquery/dist/jquery.min.js"></script>
 <script src="./assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="./assets/js/argon.js?v=1.0.0"></script>
+<script src="./assets/vendor/js-cookie/js.cookie.js"></script>
+<script src="./assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+<script src="./assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
+<!-- Optional JS -->
+<script src="./assets/vendor/chart.js/dist/Chart.min.js"></script>
+<script src="./assets/vendor/chart.js/dist/Chart.extension.js"></script>
+<!-- Argon JS -->
+<script src="./assets/js/argon.js"></script>
 
 <script>
 	//When the page has loaded.

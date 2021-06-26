@@ -1,12 +1,12 @@
-<%@ page import="java.sql.*, sociogram.DatabaseConnection"%>
+<%@ page import="java.sql.*, sociogram.DatabaseConnection" %>
 <%
 	DatabaseConnection db = new DatabaseConnection();
 	Connection cn = db.setConnection();
 %>
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-	
+	pageEncoding="ISO-8859-1" %>
+
 <html style="font-size:14px">
 <head>
 <title>SocioGram</title>
@@ -19,7 +19,8 @@
 
 <link href="./assets/img/brand/favicon.ico" rel="icon" type="image/png">
 <style> 
-        .text{ 
+        .text
+        { 
             white-space: nowrap;  
             overflow: hidden; 
             text-overflow: ellipsis;
@@ -31,10 +32,8 @@
 		    font-family: 'Zapf Chancery', cursive;
 		    font-weight: normal;
 		    -webkit-line-clamp: 2;   
-        } 
-        
-        
-    </style> 
+        }       
+</style> 
     
         
 </head>
@@ -109,25 +108,10 @@
 			</div>
 		</div>
 	</div>
-</div>
-
-	
-	
+</div>	
 	<!-- //navigation -->
 	
-	
-	
-	
-            
-                      
-            
-            
-	
-	
-	<!-- about us -->
-	
-	
-	
+	<!-- about us -->	
 		
 	<div class="container">
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -275,8 +259,8 @@
 			<div class="blog_w3icon border-top border-bottom py-1 mb-3">
 				<span> <%= rs.getString("eventvenue") %> - <%= rs.getString("eventdate") %></span>
 			</div>
-			<div><div class="text"><%=rs.getString("description")%></div></div>
-			<a href="single.html" class="button-w3ls active mt-4">Read More <span
+			<div class="text"><%=rs.getString("description")%></div>
+			<a href="#" class="button-w3ls active mt-4">Read More <span
 				class="fa fa-caret-right ml-1" aria-hidden="true"></span>
 			</a>
 		</div>
@@ -302,18 +286,12 @@
 	    <%  }} %>
 	    
 	</div>
-	
-	
-	
-	
 	<br>
 	<!-- footer -->
 	<footer class="py-5">
 		
 	</footer>
 	<!-- //footer -->
-	
-	
     <script>
         //When the page has loaded.
         $(document).ready(function () {
@@ -322,8 +300,5 @@
             });
         });
     </script>
-        
-
 </body>
-
 </html>

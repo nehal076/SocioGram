@@ -15,18 +15,32 @@
 		window.scrollTo(0, 1);
 	}
 
-function showhidePass() {
-    var x = document.getElementById("password");
-    var eye = document.getElementById("eye");
+	function showhidePass() {
+	    var x = document.getElementById("password");
+	    var eye = document.getElementById("eye");
+	
+	    if (x.type === "password") {
+	        x.type = "text";
+	        eye.className = "ni ni-world"
+	    } else {
+	        x.type = "password";
+	        eye.className = "ni ni-lock-circle-open"
+	    }
+	}
+    
+    
+    function showhidePassLogin() {
+        var x = document.getElementById("passwordLogin");
+        var eye = document.getElementById("eyeLogin");
 
-    if (x.type === "password") {
-        x.type = "text";
-        eye.className = "ni ni-world"
-    } else {
-        x.type = "password";
-        eye.className = "ni ni-lock-circle-open"
+        if (x.type === "password") {
+            x.type = "text";
+            eye.className = "ni ni-world"
+        } else {
+            x.type = "password";
+            eye.className = "ni ni-lock-circle-open"
+        }
     }
-}
 
 </script>
 <!--// Meta tag Keywords -->
@@ -125,7 +139,9 @@ function showhidePass() {
     		<button type="button" class="btn btn-block btn-primary"
 					data-toggle="modal" data-target="#modal-form-register">Sign Up</button>
     	</li>
-    </ul>    
+    </ul> 
+    
+       
 <div class="modal fade" id="modal-form" tabindex="-1" role="dialog"
 	aria-labelledby="modal-form" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered modal-sm"
@@ -164,18 +180,18 @@ function showhidePass() {
 											class="ni ni-email-83"></i></span>
 									</div>
 									<input class="form-control" placeholder="Email"
-										type="email" name="email">
+										type="email" name="email" required>
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="input-group input-group-alternative">
-									<div class="input-group-prepend">
-										<span class="input-group-text"><i
-											class="ni ni-lock-circle-open"></i></span>
-									</div>
-									<input class="form-control" placeholder="Password"
-										type="password" name="password">
-								</div>
+			                        <div class="input-group-prepend">
+			                      		<span class="input-group-text">
+			                      			<i class="ni ni-lock-circle-open" onclick="showhidePassLogin()" id="eyeLogin"></i>
+			                      		</span>
+			                    	</div>
+			                        <input type="password" class="form-control" id="passwordLogin" name="passwordLogin" placeholder="Password" required>
+			                    </div>
 							</div>
 							<div class="form-group">
 								<div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
@@ -238,7 +254,7 @@ function showhidePass() {
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
                     </div>
-                    <input class="form-control" placeholder="First Name" type="text" name="fname" id="fname">
+                    <input class="form-control" placeholder="First Name" type="text" name="fname" id="fname" required>
                   </div>                  
                 </div>         
                 <div class="form-group">
@@ -246,7 +262,7 @@ function showhidePass() {
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Last Name" type="text" name="lname" id="name">
+                    <input class="form-control" placeholder="Last Name" type="text" name="lname" id="name" required>
                   </div>
                 </div>          
                 <div class="form-group">
@@ -254,7 +270,7 @@ function showhidePass() {
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Email" type="email"  name="email">
+                    <input class="form-control" placeholder="Email" type="email"  name="email" required>
                   </div>
                 </div>
                 <div class="form-group">
@@ -263,7 +279,7 @@ function showhidePass() {
                       <span class="input-group-text">
                       <i class="ni ni-lock-circle-open" onclick="showhidePass()" id="eye"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Password" type="password" id="password" name="password">
+                    <input class="form-control" placeholder="Password" type="password" id="password" name="password" required>
                   </div>
                 </div>
                 <div class="text-muted font-italic"><small>password strength: <span class="text-success font-weight-700">strong</span></small></div>
@@ -308,9 +324,13 @@ function showhidePass() {
                     </div>
                     <div class="clearfix"></div><br>
 
-                    <div class="input-group input-group-lg">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock red"></i></span>
-                        <input type="password" class="form-control" name="password" placeholder="Password">
+                    <div class="input-group input-group-alternative">
+                        <div class="input-group-prepend">
+                      		<span class="input-group-text">
+                      			<i class="ni ni-lock-circle-open" onclick="showhidePassLogin()" id="eyeLogin"></i>
+                      		</span>
+                    	</div>
+                        <input type="password" class="form-control" name="passwordLogin" placeholder="Password">
                     </div>
                     <div class="clearfix"></div><br>
                     

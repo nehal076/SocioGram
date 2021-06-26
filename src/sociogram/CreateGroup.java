@@ -61,7 +61,7 @@ public class CreateGroup extends HttpServlet {
                 inputStream = filePart.getInputStream();
             }
 	        
-	        ps=con.prepareStatement("insert into groups(groupid,groupname,creatorid,groupphoto,intid,location,permission) values(?,?,?,?,?,?,?)");
+	        ps=con.prepareStatement("insert into sociogram.groups(groupid,groupname,creatorid,groupphoto,intid,location,permission) values(?,?,?,?,?,?,?)");
 	        ps.setString(1, "0");
 	        ps.setString(2, groupName);				  //groupname
 	        ps.setString(3, userid);				 //creatorid

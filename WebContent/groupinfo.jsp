@@ -68,7 +68,7 @@
 								<div class="col">
 									<%
 										try {
-											PreparedStatement ps = con.prepareStatement("select * from groups where groupid=?");
+											PreparedStatement ps = con.prepareStatement("select * from sociogram.groups where groupid=?");
 											ps.setInt(1, Integer.parseInt(groupid));
 											ResultSet res = ps.executeQuery();
 											while (res.next()) {
