@@ -6,19 +6,7 @@ import java.util.Base64;
 
 public class DatabaseConnection 
 {
-	
-	/*
-	
-	 * localhost config -
-	 * username = root
-	 * password = nehal
-	 * 
-	 * server config
-	 * username = root
-	 * password = passowrd 
-	 * */
-	 
-	private final String DB = "sociogram";
+    private final String DB = "sociogram";
     private final String USRNAME = "root";
     private final String PASSWORD = "nehal";
 

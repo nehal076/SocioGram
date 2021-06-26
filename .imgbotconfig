@@ -1,0 +1,10 @@
+{
+    "schedule": monthly// daily|weekly|monthly
+    "ignoredFiles": [
+    	"*.jpg",
+    	"*.png"
+    ],
+    "aggressiveCompression": "false",
+    "compressWiki": "true",
+    "minKBReduced": 10
+}
